@@ -37,11 +37,6 @@ std::ostream & operator <<(std::ostream &o, Stack_plate &s1)
     {
         o << s1.tab[i].diameter() << std::endl;
     }
-    /*for(int i=s1.len-1; i>=0;i--)
-    {
-        o << s1.tab[i].diameter() << std::endl;
-    }
-    */
     return o;
 }
 
@@ -50,7 +45,7 @@ void Stack_plate::move_plate(Stack_plate &s)
 {
     if(is_empty())
     {
-        std::cout << "Ta wieża jest pusta" << std::endl;
+        std::cout << "Wieza z ktorej chcesz pobrac element jest pusta" << std::endl;
         return;
     }
     else if(s.is_empty())
@@ -80,7 +75,7 @@ void Stack_plate::move_plate(Stack_plate &s)
     
 }
 
-bool Stack_plate::end_game()//nie dziła do sprawdzenia 
+bool Stack_plate::end_game()
 {
     if(top == len-1)
     {
@@ -91,3 +86,4 @@ bool Stack_plate::end_game()//nie dziła do sprawdzenia
         return false;
     }
 }
+
