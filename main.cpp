@@ -84,19 +84,23 @@ void main_menu(Stack_plate &s1, Stack_plate &s2, Stack_plate &s3)
         cout << "Nie ma takiej wiezy" << endl;
         break;
     }
+    cout << "Aby kontunuowac wcisnij dowolny przycisk " << endl;
+    system("pause");
     system("cls");
 }
 
-void win_game(Stack_plate &s3)
+void win_game(Stack_plate &s3, int move)
 {
     cout << "Brawo udalo ci sie wygrac gre" << endl;
-    cout << "Tak wygląda ulozona wieza: " << endl;
+    cout << "Tak wyglada ulozona wieza: " << endl;
     cout << s3;
+    cout << "Udalo ci sie ja ulozyc w: " << move << " krokach. Gratulacje !!!" <<endl;
 }
 
 
 int main()
 {
+    int moves = 0;
     int rozmiar = get_size();
     bool win = false;
     Stack_plate s1(rozmiar),s2(rozmiar),s3(rozmiar);
@@ -105,7 +109,8 @@ int main()
     {
         main_menu(s1,s2,s3);
         win = s3.end_game();
+        moves++;
     }
-    win_game(s3);
+    win_game(s3,moves);
     return 0;
 }

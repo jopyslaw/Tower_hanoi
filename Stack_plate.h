@@ -12,4 +12,5 @@ class Stack_plate: public Stack<Plate>, public Plate
     void generate_plate();//+
     void move_plate(Stack_plate &s);
     bool end_game();
+    int move();
 };

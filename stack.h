@@ -1,5 +1,11 @@
 #include <iostream>
 
+class Info
+{
+    public:
+    int err;
+};
+
 template <class T> class Stack
 {
     public:
@@ -53,7 +59,9 @@ template <class T> void Stack<T>::push(T c)
 {
     if(is_full())
     {
-        std::cout << "Stos jes pełny" << std::endl;
+        Info ii;
+        ii.err = 2;
+        throw ii;
     }
     else
     {
@@ -65,9 +73,18 @@ template <class T> void Stack<T>::push(T c)
 
 template <class T> T Stack<T>::pop()
 {
-    T element = tab[top];
-    top--;
-    return element;
+    if(is_empty())
+    {
+        Info ii;
+        ii.err = 1;
+        throw ii;
+    }
+    else
+    {
+        T element = tab[top];
+        top--;
+        return element;
+    }
 }
 
 template <class T> T Stack<T>::top_element()
