@@ -1,3 +1,5 @@
+#ifndef plate
+#define plate
 #include <iostream>
 
 class Plate
@@ -10,3 +12,5 @@ class Plate
     private:
     int plate_diameter;
 };
+
+#endif

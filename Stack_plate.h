@@ -1,8 +1,10 @@
-#include <iostream>
+#ifndef stack_plate
+#define stack_plate
 #include "plate.h"
 #include "stack.h"
 
-class Stack_plate: public Stack<Plate>, public Plate
+
+class Stack_plate: public Stack<Plate>
 {
     friend std::ostream & operator <<(std::ostream &o, Stack_plate &s1);//+
     public:
@@ -14,3 +16,5 @@ class Stack_plate: public Stack<Plate>, public Plate
     bool end_game();
     int move();
 };
+
+#endif
