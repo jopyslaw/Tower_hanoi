@@ -1,4 +1,5 @@
-#include <iostream>
+#ifndef stack
+#define stack
 
 class Info
 {
@@ -108,3 +109,5 @@ template <class T> bool Stack<T>::is_empty()
     else
         return false;
 }
+
+#endif
