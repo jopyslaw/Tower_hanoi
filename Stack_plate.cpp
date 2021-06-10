@@ -87,3 +87,4 @@ bool Stack_plate::end_game()
     }
 }
 
+
